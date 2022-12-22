@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+function validate(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var typepet = document.getElementById("typepet").value;
+  var pet = document.getElementById("pet").value;
+  var gender = document.getElementById("gender").value
+  var message = document.getElementById("message").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  
+   if(name.length < 5){
+    text = "Please Enter valid Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+   if(email.indexOf("@") == -1 || email.length < 6){
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(isNaN(phone) || phone.length != 10){
+    text = "Please Enter valid Phone Number";
+    error_message.innerHTML = text;
+    return false;
+  }
+ 
+  if(typepet.length < 3){
+  	text = "Select Correct pet type";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(gender.length.value == ""){
+  	text = "Select your pet's Gender";
+  	error_message.innerHTML = text;
+  	return false;
+  }
+  if(pet.length == "" || pet.length < 1){
+    text = "Please Enter Correct Breed Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+   if(message.length <= 20){
+    text = "Reason should be more than 20 characters";
+    error_message.innerHTML = text;
+    return false;
+  }
+  
+  alert("Form Submitted Successfully!");
+  return true;
+}
+	</script>
+</head>
+<body >
+
+	<style type="text/css">
+
+		@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caramel&family=Lobster&family=Philosopher:ital,wght@1,700&family=Yanone+Kaffeesatz:wght@200&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Lobster&family=Philosopher:ital,wght@1,700&display=swap');
+
+*{
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Philosopher', sans-serif;
+
+}
+
+body{
+  background: #f4c4f3;
+  background-image:"https://s1.1zoom.me/big0/485/Cats_Dogs_Colored_background_Lying_down_Poodle_572003_1280x853.jpg/";
+
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 350px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+}
+.container{
+	font-size: 10px;
+  background: #d9a7c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.container h1{
+
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 10px;
+	letter-spacing: 2px;
+	color: #332902;
+
+}
+.container h2{
+
+font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+
+}
+.container .input_field{
+  margin-bottom: 10px;
+}
+
+
+
+.container .input_field input[type="text"],
+.container textarea{
+  border: 1px solid white;
+  width: 100%;
+  padding: 10px;
+}
+.container .input_field input[type="radio"]{
+	border: 1px solid white;
+	font-size: 24px;
+	font-weight: 500;
+  padding: 20px;
+  width: 10%;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.container textarea{
+  resize: none;
+  height: 80px;
+}
+
+.container .btn input[type="submit"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: pink;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+	</style>
+<div class="container">
+  <h2>Pet Lover’s Paradise</h2>
+  <h1>Adoption Form</h1>
+  <div id="error_message">
+     
+  </div>
+  <form action="" id="myform" onsubmit = "return validate();" autocomplete="off">
+    <div class="input_field">
+        <input type="text" placeholder="Full Name" id="name">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Email" id="email">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Phone" id="phone">
+    </div>
+    
+    <div class="input_field">
+        <input type="text" placeholder="Pet Type" id="typepet">
+    </div>
+    <div class="input_field">
+    	Gender :<input type="radio" name="gender" value="male" id="gender">Male
+    	<input type="radio" name="gender" value="female" id="gender">Female
+    </div>
+    
+    <div class="input_field">
+        <input type="text" placeholder="Pet Breed" id="pet">
+    </div>
+    <div class="input_field">
+        <textarea placeholder="Why do you want to Adopt a Pet" id="message"></textarea>
+    </div>
+    
+    <div class="btn">
+        <input type="submit">
+
+    </div>
+  </form>
+</div>
+</body>
+</html>
