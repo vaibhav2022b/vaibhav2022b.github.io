@@ -78,9 +78,12 @@ function validate(){
 }
 
 body{
-  background: #f4c4f3;
-  background-image:"https://s1.1zoom.me/big0/485/Cats_Dogs_Colored_background_Lying_down_Poodle_572003_1280x853.jpg/";
-
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(pets.jpg);
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative; 
 }
 
 .container{
@@ -92,35 +95,36 @@ body{
   width: 100%;
   background: #fff;
   padding: 25px;
+  border: 3px solid #FFF;
   border-radius: 5px;
-  box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+  box-shadow: 0px 0px 2px rgba(254,236,164,1); 
 }
 .container{
-	font-size: 10px;
-  background: #d9a7c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 10px;
+  background: transparent;
+
 }
 .container h1{
-
 	text-align: center;
-	font-size: 15px;
+	font-size: 20px;
 	margin-bottom: 10px;
 	letter-spacing: 2px;
-	color: #332902;
+	color: #FFF;
 
 }
 .container h2{
-
-font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   text-align: center;
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #332902;
+  color: #FFF;
+  font-size: 15px;
 
 }
 .container .input_field{
+  color: #FFF;
+  font-size: 15px;
   margin-bottom: 10px;
 }
 
@@ -165,11 +169,26 @@ font-family: 'Archivo Black', sans-serif;
 #error_message{
   margin-bottom: 20px;
   background: #fe8b8e;
+  border: 0px;
+  border-radius: 5px;
   padding: 0px;
   text-align: center;
   font-size: 14px;
   transition: all 0.5s ease;
 }
+.footer{
+    background-color:rgba(0,0,0,0.9);
+    width:100%;
+    box-shadow:0px 0px 25px rgba(0,0,0,1.00);
+    padding:5px 0px;
+    bottom:0;
+    position:fixed;
+    left: 0px;
+    font-family:'times new roman';
+    font-size:11px;
+    color:#FFF;
+    letter-spacing: 5px;
+  }
 	</style>
 <div class="container">
   <h2>Pet Lover’s Paradise</h2>
@@ -208,6 +227,9 @@ font-family: 'Archivo Black', sans-serif;
 
     </div>
   </form>
+</div>
+<div class="footer">
+  <footer align="center"> &copy; Vaibhav Burkul | Department of Electrical Engineering | USN: EE20020 | S.B. Jain, Nagpur</footer>  
 </div>
 </body>
 </html>
